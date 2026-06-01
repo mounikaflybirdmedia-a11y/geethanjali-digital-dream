@@ -1,0 +1,98 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-navy: var(--navy);
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --shadow-elegant: 0 20px 50px -20px color-mix(in oklab, var(--primary) 40%, transparent);
+  --gradient-hero: linear-gradient(135deg, var(--primary) 0%, color-mix(in oklab, var(--primary) 70%, black) 100%);
+  --gradient-gold: linear-gradient(135deg, #E5C07A, #CB9346);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: #FCFAF6;
+  --foreground: #0D1627;
+  --card: #ffffff;
+  --card-foreground: #0D1627;
+  --popover: #ffffff;
+  --popover-foreground: #0D1627;
+  --primary: #0D2347;
+  --primary-foreground: #ffffff;
+  --secondary: #F0EAD6;
+  --secondary-foreground: #0D2347;
+  --muted: #F3ECE0;
+  --muted-foreground: #5C677D;
+  --accent: #CB9346;
+  --accent-foreground: #ffffff;
+  --destructive: #9A1F1F;
+  --destructive-foreground: #ffffff;
+  --border: #E5DCCB;
+  --input: #E5DCCB;
+  --ring: #0D2347;
+  --gold: #CB9346;
+  --navy: #0D2347;
+}
+
+.dark {
+  --background: #080D1A;
+  --foreground: #E6EDF8;
+  --card: #0D1424;
+  --card-foreground: #E6EDF8;
+  --primary: #CB9346;
+  --primary-foreground: #0D2347;
+  --secondary: #1E293B;
+  --secondary-foreground: #E6EDF8;
+  --muted: #1E293B;
+  --muted-foreground: #94A3B8;
+  --accent: #CB9346;
+  --accent-foreground: #0D2347;
+  --border: rgb(255 255 255 / 10%);
+  --input: rgb(255 255 255 / 15%);
+  --ring: #CB9346;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
